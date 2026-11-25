@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Orders | Omega Gift Point Admin</title>
+
+    <link rel="stylesheet" href="orders.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">Ω</div>
+                <div>
+                    <h2>OMEGA</h2>
+                    <span>GIFT POINT</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="product-management.html">Products</a>
+                <a href="orders.html" class="active">Orders</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <button id="logoutBtn">Logout ↗</button>
+            </div>
+
+        </aside>
+
+        <main class="main-content">
+
+            <header class="topbar">
+                <button id="menuToggle" class="menu-toggle">☰</button>
+
+                <div>
+                    <h1>Order Management</h1>
+                    <p>Manage all Omega Gift Point customer orders</p>
+                </div>
+
+                <button id="refreshBtn" class="refresh-btn">
+                    ↻ Refresh
+                </button>
+            </header>
+
+            <section class="stats-grid">
+
+                <div class="stat-card">
+                    <span>Total Orders</span>
+                    <h2 id="totalOrders">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <span>New Orders</span>
+                    <h2 id="newOrders">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <span>Processing</span>
+                    <h2 id="processingOrders">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <span>Completed</span>
+                    <h2 id="completedOrders">0</h2>
+                </div>
+
+            </section>
+
+            <section class="orders-section">
+
+                <div class="orders-heading">
+                    <div>
+                        <h2>All Orders</h2>
+                        <p>View and manage customer purchases</p>
+                    </div>
+                </div>
+
+                <div class="filters">
+
+                    <input
+                        type="search"
+                        id="orderSearch"
+                        placeholder="Search order number, customer or phone..."
+                    >
+
+                    <select id="statusFilter">
+                        <option value="all">All Status</option>
+                        <option value="new">New</option>
+                        <option value="confirmed">Confirmed</option>
+                        <option value="processing">Processing</option>
+                        <option value="shipped">Shipped</option>
+                        <option value="delivered">Delivered</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+
+                </div>
+
+                <div id="ordersMessage" class="orders-message">
+                    Loading orders...
+                </div>
+
+                <div class="table-wrapper">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Date</th>
+                                <th>Items</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="ordersTableBody"></tbody>
+                    </table>
+
+                </div>
+
+                <div id="mobileOrders" class="mobile-orders"></div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- ORDER DETAILS MODAL -->
+
+    <div class="modal" id="orderModal">
+
+        <div class="modal-overlay" id="modalOverlay"></div>
+
+        <div class="modal-content">
+
+            <button class="modal-close" id="closeModal">×</button>
+
+            <h2>Order Details</h2>
+
+            <div id="orderDetails"></div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase-config.js"></script>
+    <script src="orders.js"></script>
+
+</body>
+</html>

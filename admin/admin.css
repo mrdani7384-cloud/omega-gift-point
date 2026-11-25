@@ -1,0 +1,274 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "DM Sans", sans-serif;
+    background:
+        radial-gradient(circle at top left, #49251f 0%, transparent 40%),
+        #171313;
+    color: #fff8f3;
+}
+
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 430px;
+    padding: 42px 34px;
+    background: #211b19;
+    border: 1px solid rgba(218, 177, 120, 0.25);
+    border-radius: 22px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+}
+
+.brand-mark {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 20px;
+    border-radius: 18px;
+    background: #b73532;
+    color: #fff;
+    font-family: Georgia, serif;
+    font-size: 32px;
+}
+
+.eyebrow {
+    color: #d9b77e;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+h1 {
+    margin-top: 12px;
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-size: 34px;
+}
+
+.subtitle {
+    margin: 10px 0 30px;
+    color: #b9aaa2;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+label {
+    display: block;
+    margin: 18px 0 8px;
+    color: #e9dcd2;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 14px 15px;
+    color: white;
+    background: #171313;
+    border: 1px solid #493b35;
+    border-radius: 10px;
+    outline: none;
+    font: inherit;
+}
+
+input:focus {
+    border-color: #d9b77e;
+}
+
+button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #b73532;
+    color: white;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #d04740;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.message {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.message.error {
+    color: #ff8989;
+}
+
+.message.success {
+    color: #9be0a9;
+}
+
+.logout-button {
+    margin-top: 12px;
+    background: #51423b;
+}
+
+.back-link {
+    display: block;
+    margin-top: 25px;
+    color: #d9b77e;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.footer-text {
+    margin-top: 30px;
+    color: #84766e;
+    text-align: center;
+    font-size: 11px;
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        padding: 34px 23px;
+    }
+
+    h1 {
+        font-size: 29px;
+    }
+}
+
+/* ==========================================================
+   OMEGA GIFT POINT — PREMIUM ADMIN THEME
+   Visual-only layer; authentication form behavior unchanged.
+========================================================== */
+
+:root {
+    --ogp-bg: #100d0e;
+    --ogp-surface: #1b1517;
+    --ogp-surface-2: #241a1d;
+    --ogp-border: rgba(215, 181, 125, .20);
+    --ogp-gold: #d8b77e;
+    --ogp-gold-soft: #f0d9ad;
+    --ogp-red: #9d2634;
+    --ogp-red-light: #c24a54;
+    --ogp-text: #fff8f1;
+    --ogp-muted: #b7a6a0;
+}
+
+body {
+    background:
+        radial-gradient(ellipse at 15% 8%, rgba(157, 38, 52, .24), transparent 36%),
+        radial-gradient(ellipse at 88% 92%, rgba(216, 183, 126, .10), transparent 34%),
+        var(--ogp-bg);
+}
+
+.login-card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, rgba(39, 27, 29, .98), rgba(24, 18, 20, .98));
+    border-color: var(--ogp-border);
+    border-radius: 26px;
+    box-shadow: 0 30px 90px rgba(0,0,0,.48), inset 0 1px 0 rgba(255,255,255,.055);
+}
+
+.login-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--ogp-gold), var(--ogp-red-light), transparent);
+}
+
+.brand-mark {
+    background: linear-gradient(145deg, #bd4650, #791b29);
+    border: 1px solid rgba(240, 217, 173, .4);
+    box-shadow: 0 12px 28px rgba(157, 38, 52, .28), inset 0 1px 0 rgba(255,255,255,.25);
+}
+
+.eyebrow {
+    color: var(--ogp-gold);
+}
+
+h1 {
+    color: #fff9f4;
+}
+
+.subtitle {
+    color: var(--ogp-muted);
+}
+
+label {
+    color: #eadbd2;
+}
+
+input {
+    background: rgba(13, 11, 12, .72);
+    border-color: rgba(215, 181, 125, .22);
+    border-radius: 12px;
+    transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+input:focus {
+    border-color: var(--ogp-gold);
+    box-shadow: 0 0 0 4px rgba(216, 183, 126, .10);
+    background: rgba(13, 11, 12, .92);
+}
+
+button {
+    background: linear-gradient(135deg, #b33b48, #7d1a29);
+    box-shadow: 0 9px 22px rgba(125, 26, 41, .22);
+    transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+button:hover:not(:disabled) {
+    background: linear-gradient(135deg, #c94c57, #8f2030);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(125, 26, 41, .30);
+}
+
+button:disabled {
+    box-shadow: none;
+}
+
+.logout-button {
+    background: linear-gradient(135deg, #51423b, #332a27);
+}
+
+.back-link {
+    color: var(--ogp-gold);
+}
+
+.footer-text {
+    color: #8f7f78;
+}
+
+input:focus-visible,
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid rgba(216, 183, 126, .55);
+    outline-offset: 3px;
+}
+

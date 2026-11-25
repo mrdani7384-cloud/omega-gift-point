@@ -1,0 +1,457 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#171313">
+
+    <title>Dashboard | Omega Gift Point</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-logo">Ω</div>
+            <div>
+                <h2>OMEGA</h2>
+                <span>GIFT POINT</span>
+            </div>
+        </div>
+
+        <p class="menu-label">MAIN MENU</p>
+
+        <nav class="side-nav">
+
+            <a href="dashboard.html" class="nav-link active">
+                <span>▦</span> Overview
+            </a>
+
+            <a href="product-management.html" class="nav-link">
+                <span>□</span> Products
+            </a>
+
+            <a href="orders.html" class="nav-link" id="ordersLink">
+                <span>▤</span> Orders
+            </a>
+
+            <a href="#" class="nav-link" id="staffLink">
+                <span>♙</span> Staff
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="../index.html" class="store-link">
+                ↗ View Store
+            </a>
+
+            <button id="logoutButton" class="logout-button">
+                ⇥ Sign Out
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <button class="menu-toggle" id="menuToggle">☰</button>
+
+            <div>
+                <p class="topbar-label">ADMIN WORKSPACE</p>
+                <h1>Dashboard</h1>
+            </div>
+
+            <div class="admin-profile">
+                <div class="profile-avatar">O</div>
+
+                <div>
+                    <strong id="adminEmail">Loading...</strong>
+                    <span id="adminRole">Checking access...</span>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- WELCOME -->
+
+        <section class="welcome-section">
+
+            <div>
+                <p class="eyebrow">WELCOME BACK</p>
+
+                <h2>Your business at a glance.</h2>
+
+                <p>
+                    Manage your products and keep track of your store.
+                </p>
+            </div>
+
+            <div class="date-display" id="currentDate"></div>
+
+        </section>
+
+
+        <!-- ORIGINAL STATISTICS -->
+
+        <section class="stats-grid">
+
+            <article class="stat-card">
+
+                <div class="stat-icon">□</div>
+
+                <p>Total Products</p>
+
+                <h3 id="totalProducts">—</h3>
+
+                <span>Products in your catalogue</span>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <div class="stat-icon">✓</div>
+
+                <p>Active Products</p>
+
+                <h3 id="activeProducts">—</h3>
+
+                <span>Visible in your online store</span>
+
+            </article>
+
+
+            <article class="stat-card">
+
+                <div class="stat-icon">▤</div>
+
+                <p>Total Orders</p>
+
+                <h3 id="totalOrders">—</h3>
+
+                <span>Orders saved in your database</span>
+
+            </article>
+
+        </section>
+
+
+        <!-- BUSINESS ANALYTICS -->
+
+        <section class="analytics-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">BUSINESS PERFORMANCE</p>
+                    <h2>Sales Analytics</h2>
+                </div>
+
+            </div>
+
+
+            <!-- ANALYTICS CARDS -->
+
+            <div class="analytics-grid">
+
+
+                <article class="analytics-card">
+
+                    <div class="analytics-icon">₹</div>
+
+                    <p>Delivered Sales</p>
+
+                    <h3 id="totalRevenue">₹0.00</h3>
+
+                    <span>From delivered orders</span>
+
+                </article>
+
+
+                <article class="analytics-card">
+
+                    <div class="analytics-icon">▤</div>
+
+                    <p>Total Orders</p>
+
+                    <h3 id="analyticsTotalOrders">0</h3>
+
+                    <span>All recorded orders</span>
+
+                </article>
+
+
+                <article class="analytics-card">
+
+                    <div class="analytics-icon">◷</div>
+
+                    <p>Pending Orders</p>
+
+                    <h3 id="pendingOrders">0</h3>
+
+                    <span>Awaiting completion</span>
+
+                </article>
+
+
+                <article class="analytics-card">
+
+                    <div class="analytics-icon">✓</div>
+
+                    <p>Delivered Orders</p>
+
+                    <h3 id="completedOrders">0</h3>
+
+                    <span>Successfully delivered</span>
+
+                </article>
+
+
+            </div>
+
+
+            <!-- SALES CHART -->
+
+            <article class="panel sales-chart-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <p class="eyebrow">REVENUE OVERVIEW</p>
+                        <h2>Monthly Sales</h2>
+                    </div>
+
+                    <span class="chart-label">
+                        Last 6 Months
+                    </span>
+
+                </div>
+
+                <div class="chart-container">
+
+                    <canvas id="salesChart"></canvas>
+
+                </div>
+
+                <p class="chart-note">
+                    Based on delivered orders only.
+                </p>
+
+            </article>
+
+
+            <!-- BEST SELLING + RECENT ORDERS -->
+
+            <div class="analytics-content-grid">
+
+
+                <!-- BEST SELLING PRODUCTS -->
+
+                <article class="panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+                            <p class="eyebrow">PRODUCT PERFORMANCE</p>
+                            <h2>Best-Selling Products</h2>
+                        </div>
+
+                    </div>
+
+                    <div id="bestSellingProducts">
+
+                        <div class="analytics-empty">
+                            Product sales will appear here.
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- RECENT ORDERS -->
+
+                <article class="panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+                            <p class="eyebrow">LATEST ACTIVITY</p>
+                            <h2>Recent Orders</h2>
+                        </div>
+
+                        <a href="orders.html" class="panel-link">
+                            View All
+                        </a>
+
+                    </div>
+
+                    <div id="recentOrders">
+
+                        <div class="analytics-empty">
+                            Recent orders will appear here.
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- STORE MANAGEMENT + SYSTEM STATUS -->
+
+        <section class="content-grid">
+
+
+            <!-- QUICK ACTIONS -->
+
+            <article class="panel">
+
+                <div class="panel-heading">
+
+                    <div>
+                        <p class="eyebrow">STORE MANAGEMENT</p>
+                        <h2>Quick Actions</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="quick-actions">
+
+                    <button class="action-card" id="addProductButton">
+
+                        <span>＋</span>
+
+                        <strong>Add Product</strong>
+
+                        <small>Add a new gift to your store</small>
+
+                    </button>
+
+
+                    <button class="action-card" id="manageProductsButton">
+
+                        <span>□</span>
+
+                        <strong>Manage Products</strong>
+
+                        <small>Update prices and product details</small>
+
+                    </button>
+
+
+                    <button class="action-card" id="viewStoreButton">
+
+                        <span>↗</span>
+
+                        <strong>View Online Store</strong>
+
+                        <small>See what your customers see</small>
+
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- SYSTEM STATUS -->
+
+            <article class="panel status-panel">
+
+                <p class="eyebrow">SYSTEM STATUS</p>
+
+                <h2>Store Connection</h2>
+
+
+                <div class="status-row">
+
+                    <span class="status-dot"></span>
+
+                    <div>
+                        <strong>Supabase</strong>
+                        <small id="connectionStatus">Checking connection...</small>
+                    </div>
+
+                </div>
+
+
+                <div class="status-row">
+
+                    <span class="status-dot"></span>
+
+                    <div>
+                        <strong>Admin Access</strong>
+                        <small id="accessStatus">Verifying permissions...</small>
+                    </div>
+
+                </div>
+
+
+                <p class="status-note">
+                    Your dashboard uses your existing Supabase project.
+                </p>
+
+            </article>
+
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+            © 2026 Omega Gift Point. Admin Workspace.
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- MOBILE OVERLAY -->
+
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+
+<!-- LIBRARIES -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="../js/supabase-config.js"></script>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>

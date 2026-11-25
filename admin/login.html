@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#171313">
+
+    <title>Admin Login | Omega Gift Point</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <main class="login-container">
+        <section class="login-card">
+
+            <div class="brand-mark">Ω</div>
+
+            <p class="eyebrow">OMEGA GIFT POINT</p>
+            <h1>Welcome Back</h1>
+            <p class="subtitle">Sign in to access your admin workspace.</p>
+
+            <form id="loginForm">
+
+                <label for="email">Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your admin email"
+                    autocomplete="username"
+                    required
+                >
+
+                <label for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                    required
+                >
+
+                <button type="submit" id="loginButton">
+                    Sign In
+                </button>
+
+            </form>
+
+            <p id="loginMessage" class="message" role="status"></p>
+
+            <button type="button" id="logoutButton" class="logout-button" hidden>
+                Sign Out
+            </button>
+
+            <a href="../index.html" class="back-link">
+                ← Back to Store
+            </a>
+
+            <p class="footer-text">
+                Secure Admin Access · Omega Gift Point
+            </p>
+
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase-config.js"></script>
+    <script src="login.js"></script>
+
+</body>
+</html>
